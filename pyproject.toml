@@ -1,0 +1,17 @@
+[project]
+name = "advent2023"
+version = "0.1.0"
+description = "Advent of Code 2023"
+authors = [
+    {name = "Jacopo Farina",email = "jacopo1.farina@gmail.com"},
+]
+dependencies = []
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "ruff>=0.1.6",
+    "mypy>=1.7.1",
+]
