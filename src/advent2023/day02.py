@@ -64,7 +64,11 @@ def part2(games: Games) -> int:
     return retval
 
 
+def parse(my_path: str) -> Games:
+    return parse_games_description(read_input_as_lines(my_path))
+
+
 if __name__ == "__main__":
-    quiz_input = parse_games_description(read_input_as_lines(__file__))
+    quiz_input = parse(__file__)
     print(part1(quiz_input))
     print(part2(quiz_input))

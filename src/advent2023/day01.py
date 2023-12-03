@@ -47,7 +47,11 @@ def part2(lines: list[str]) -> int:
     return retval
 
 
+def parse(my_path: str) -> list[str]:
+    return read_input_as_lines(my_path)
+
+
 if __name__ == "__main__":
-    quiz_input = read_input_as_lines(__file__)
+    quiz_input = parse(__file__)
     print(part1(quiz_input))
     print(part2(quiz_input))
