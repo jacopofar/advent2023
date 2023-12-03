@@ -2,10 +2,10 @@ import re
 
 from advent2023.helpers import read_input_as_lines
 
-PositionAndCharacter = dict[tuple[int, int], str]
+CharactersPositions = dict[tuple[int, int], str]
 
 
-def part1(parts_and_numbers: list[tuple[int, PositionAndCharacter]]) -> int:
+def part1(parts_and_numbers: list[tuple[int, CharactersPositions]]) -> int:
     retval = 0
     for part_number, parts in parts_and_numbers:
         if len(parts) > 0:
@@ -13,7 +13,7 @@ def part1(parts_and_numbers: list[tuple[int, PositionAndCharacter]]) -> int:
     return retval
 
 
-def part2(parts_and_numbers: list[tuple[int, PositionAndCharacter]]) -> int:
+def part2(parts_and_numbers: list[tuple[int, CharactersPositions]]) -> int:
     # for each gear coordinate, list the parts adjacent to it
     gears_parts: dict[tuple[int, int], set[int]] = dict()
     for part_number, nearby_parts in parts_and_numbers:
@@ -29,18 +29,18 @@ def part2(parts_and_numbers: list[tuple[int, PositionAndCharacter]]) -> int:
     return retval
 
 
-def parse(my_path: str) -> list[tuple[int, PositionAndCharacter]]:
+def parse(my_path: str) -> list[tuple[int, CharactersPositions]]:
     lines = read_input_as_lines(my_path)
     number_re = re.compile(r"\d+")
-    parts_positions: PositionAndCharacter = dict()
+    parts_positions: CharactersPositions = dict()
     for idx, line in enumerate(lines):
         for cidx, c in enumerate(line):
             if not c.isdigit() and c != ".":
                 parts_positions[(cidx, idx)] = c
-    number_and_parts: list[tuple[int, PositionAndCharacter]] = []
+    number_and_parts: list[tuple[int, CharactersPositions]] = []
     for idx, line in enumerate(lines):
         for number in number_re.finditer(line):
-            this_number_with_parts: tuple[int, PositionAndCharacter] = (
+            this_number_with_parts: tuple[int, CharactersPositions] = (
                 int(number.group()),
                 dict(),
             )
