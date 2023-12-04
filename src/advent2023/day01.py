@@ -47,8 +47,8 @@ def part2(lines: list[str]) -> int:
     return retval
 
 
-def parse(my_path: str) -> list[str]:
-    return read_input_as_lines(my_path)
+def parse(my_path: str, sample: bool = False) -> list[str]:
+    return read_input_as_lines(my_path, sample=sample)
 
 
 if __name__ == "__main__":

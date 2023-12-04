@@ -29,8 +29,8 @@ def part2(parts_and_numbers: list[tuple[int, CharactersPositions]]) -> int:
     return retval
 
 
-def parse(my_path: str) -> list[tuple[int, CharactersPositions]]:
-    lines = read_input_as_lines(my_path)
+def parse(my_path: str, sample: bool = False) -> list[tuple[int, CharactersPositions]]:
+    lines = read_input_as_lines(my_path, sample=sample)
     number_re = re.compile(r"\d+")
     parts_positions: CharactersPositions = dict()
     for idx, line in enumerate(lines):

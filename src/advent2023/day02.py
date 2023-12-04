@@ -64,8 +64,8 @@ def part2(games: Games) -> int:
     return retval
 
 
-def parse(my_path: str) -> Games:
-    return parse_games_description(read_input_as_lines(my_path))
+def parse(my_path: str, sample: bool = False) -> Games:
+    return parse_games_description(read_input_as_lines(my_path, sample=sample))
 
 
 if __name__ == "__main__":
