@@ -1,5 +1,3 @@
-import re
-
 from advent2023.helpers import read_input_as_lines
 
 Card = tuple[set[int], set[int]]
