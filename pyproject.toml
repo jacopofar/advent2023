@@ -5,7 +5,9 @@ description = "Advent of Code 2023"
 authors = [
     {name = "Jacopo Farina",email = "jacopo1.farina@gmail.com"},
 ]
-dependencies = []
+dependencies = [
+    "Pillow>=10.1.0",
+]
 requires-python = ">=3.12"
 readme = "README.md"
 license = {text = "MIT"}
